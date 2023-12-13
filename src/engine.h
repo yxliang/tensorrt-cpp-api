@@ -8,6 +8,7 @@
 #include <opencv2/cudaarithm.hpp>
 #include "NvInfer.h"
 #include <cuda_runtime.h>
+#include "tensorrt_cpp_api_export.h"
 
 // Utility methods
 namespace Util {
@@ -108,7 +109,7 @@ class Logger : public nvinfer1::ILogger {
     void log (Severity severity, const char* msg) noexcept override;
 };
 
-class Engine {
+class TRT_EXPORT Engine {
 public:
     Engine(const Options& options);
     ~Engine();
